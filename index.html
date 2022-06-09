@@ -10,6 +10,24 @@
 <body>
     <div class="container">
         <h1>Book Library</h1>
+        <form>
+            <div class="mb-3">
+                <label for="title" class="form-label">Book Title</label>
+                <input type="text" class="form-control" id="title">
+            </div>
+            <div class="mb-3">
+                <label for="author" class="form-label">Author</label>
+                <input type="text" class="form-control" id="author">
+            </div>
+            <div class="mb-3">
+                <label for="numPages" class="form-label">Number of Pages</label>
+                <input type="number" class="form-control" id="numPages" min="1">
+            </div>
+            <div class="mb-3">
+                <input type="checkbox" class="form-check-input" id="haveRead">
+                <label for="haveRead" class="form-check-label">Finished Reading</label>
+            </div>
+        </form>
         <button type="button" class="btn btn-primary" id="addButton">Add Book</button>
         <button type="button" class="btn btn-primary" id="logButton">Log Books</button>
     </div>
