@@ -24,7 +24,7 @@ function addBookToLibrary(){
     myLibrary.push(new Book(title, author, numPages, haveRead));
 }
 
-function showBooks(){
+function logBooks(){
     for(let book of myLibrary){
         console.log(book.getInfo());
     }
@@ -32,4 +32,4 @@ function showBooks(){
 
 // DOM
 document.getElementById("addButton").addEventListener("click", addBookToLibrary);
-document.getElementById("showButton").addEventListener("click", showBooks);
+document.getElementById("logButton").addEventListener("click", logBooks);
