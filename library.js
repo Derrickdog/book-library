@@ -32,4 +32,4 @@ function logBooks(){
 
 // DOM
 document.getElementById("addButton").addEventListener("click", addBookToLibrary);
-document.getElementById("logButton").addEventListener("click", logBooks);
+// document.getElementById("logButton").addEventListener("click", logBooks);
