@@ -24,6 +24,7 @@ Book.prototype.getInfo = function() {
 document.getElementById("bookForm").addEventListener("submit", addBookToLibrary);
 // document.getElementById("addButton").addEventListener("click", addBookToLibraryPrompt);
 // document.getElementById("logButton").addEventListener("click", logBooks);
+document.getElementById("bookList").addEventListener("click", removeBook);
 
 function addBookToLibraryPrompt(){
     const title = window.prompt("Enter Title");
@@ -35,17 +36,34 @@ function addBookToLibraryPrompt(){
 
 function addBookToLibrary(e){
     e.preventDefault();
-    
+
+    //new book
     const title = document.getElementById("title").value;
     const author = document.getElementById("author").value;
     const numPages = document.getElementById("numPages").value;
     const newBook = new Book(title, author, numPages, "no");
     myLibrary.push(newBook);
     
+    //create li
     const li = document.createElement("li");
     li.className = "list-group-item";
     li.textContent = newBook.getInfo();
+
+    //create delete button
+    const deleteButton = document.createElement("button");
+    deleteButton.className = "btn btn-danger btn-sm float-end deleteBtn";
+    deleteButton.textContent = "X";
+
+    //add items
+    li.appendChild(deleteButton);
     document.getElementById("bookList").appendChild(li);
+}
+
+function removeBook(e){
+    if(e.target.classList.contains("deleteBtn")){
+        const li = e.target.parentElement;
+        document.getElementById("bookList").removeChild(li);
+    }
 }
 
 function logBooks(){

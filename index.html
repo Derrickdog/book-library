@@ -30,15 +30,16 @@
                 <input type="checkbox" class="form-check-input" id="haveRead">
                 <label for="haveRead" class="form-check-label">Finished Reading</label>
             </div> -->
-            <button type="submit" class="btn btn-primary" id="addButton">Add Book</button>
+            <button type="submit" class="btn btn-success" id="addButton">Add Book</button>
         </form>
         <!-- <button type="button" class="btn btn-primary" id="logButton">Log Books</button> -->
-        <div class="card card-body" id="bookList">
-            <h2 class="text-center mb-3">Books</h2>
-            <ul id="books" class="list-group">
-                <li class="list-group-item">The Hobbit by JRR Tolkien, 255 pages</li>
-            </ul>
-        </div>
+        <h2 class="text-center mb-3">Books</h2>
+        <ul class="list-group" id="bookList" >
+            <li class="list-group-item">
+                The Hobbit by JRR Tolkien, 255 pages 
+                <button class="btn btn-danger btn-sm float-end deleteBtn">X</button>
+            </li>
+        </ul>
     </div>
 </body>
 </html>
