@@ -1,14 +1,5 @@
-// const book1 = new Book("The Hobbit", "J.R.R. Tolkien", 295, "No");
-// console.log(book1.getInfo());
-
+// Log books with prompt
 let myLibrary = [];
-
-function Book(title, author, numPages, haveRead){
-    this.title = title;
-    this.author = author;
-    this.numPages = numPages;
-    this.haveRead = haveRead;
-}
 
 Book.prototype.getInfoRead = function() {
     let haveReadString;
@@ -16,15 +7,8 @@ Book.prototype.getInfoRead = function() {
     return this.title + " by " + this.author + ", " + this.numPages + " pages, " + haveReadString;
 }
 
-Book.prototype.getInfo = function() {
-    return this.title + " by " + this.author + ", " + this.numPages + " pages";
-}
-
-// DOM
-document.getElementById("bookForm").addEventListener("submit", addBookToLibrary);
 // document.getElementById("addButton").addEventListener("click", addBookToLibraryPrompt);
 // document.getElementById("logButton").addEventListener("click", logBooks);
-document.getElementById("bookList").addEventListener("click", removeBook);
 
 function addBookToLibraryPrompt(){
     const title = window.prompt("Enter Title");
@@ -34,6 +18,30 @@ function addBookToLibraryPrompt(){
     myLibrary.push(new Book(title, author, numPages, haveRead));
 }
 
+Book.prototype.getInfo = function() {
+    return this.title + " by " + this.author + ", " + this.numPages + " pages";
+}
+
+function logBooks(){
+    for(let book of myLibrary){
+        console.log(book.getInfo());
+    }
+}
+
+// const book1 = new Book("The Hobbit", "J.R.R. Tolkien", 295, "No");
+// console.log(book1.getInfo());
+
+// Display books with DOM
+function Book(title, author, numPages, haveRead){
+    this.title = title;
+    this.author = author;
+    this.numPages = numPages;
+    this.haveRead = haveRead;
+}
+
+document.getElementById("bookForm").addEventListener("submit", addBookToLibrary);
+document.getElementById("bookList").addEventListener("click", removeBook);
+
 function addBookToLibrary(e){
     e.preventDefault();
 
@@ -41,7 +49,8 @@ function addBookToLibrary(e){
     const title = document.getElementById("title").value;
     const author = document.getElementById("author").value;
     const numPages = document.getElementById("numPages").value;
-    const newBook = new Book(title, author, numPages, "no");
+    const haveRead = document.getElementById("haveRead").checked;
+    const newBook = new Book(title, author, numPages, haveRead);
     myLibrary.push(newBook);
     
     //create li
@@ -65,11 +74,3 @@ function removeBook(e){
         document.getElementById("bookList").removeChild(li);
     }
 }
-
-function logBooks(){
-    for(let book of myLibrary){
-        console.log(book.getInfo());
-    }
-}
-
-
