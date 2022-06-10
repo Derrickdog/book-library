@@ -13,7 +13,7 @@
         <h1>Book Library</h1>
     </header>
     <div class="container card card-body">
-        <form class="card card-body mb-3">
+        <form class="card card-body mb-3" id="bookForm">
             <div class="mb-3">
                 <label for="title" class="form-label">Book Title</label>
                 <input type="text" class="form-control" id="title">
@@ -30,25 +30,11 @@
                 <input type="checkbox" class="form-check-input" id="haveRead">
                 <label for="haveRead" class="form-check-label">Finished Reading</label>
             </div> -->
-            <button type="button" class="btn btn-primary" id="addButton">Add Book</button>
+            <button type="submit" class="btn btn-primary" id="addButton">Add Book</button>
         </form>
         <!-- <button type="button" class="btn btn-primary" id="logButton">Log Books</button> -->
-        <!-- <table class="table">
-            <thead>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Pages</th>
-                <tbody>
-                    <tr>
-                        <td>The Hobbit</td>
-                        <td>JRR Tolkien</td>
-                        <td>255</td>
-                    </tr>
-                </tbody>
-            </thead>
-        </table> -->
-        <div class="card card-body">
-            <h2 class="text-center">Books</h2>
+        <div class="card card-body" id="bookList">
+            <h2 class="text-center mb-3">Books</h2>
             <ul id="books" class="list-group">
                 <li class="list-group-item">The Hobbit by JRR Tolkien, 255 pages</li>
             </ul>
