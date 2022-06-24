@@ -16,15 +16,15 @@
         <form class="card card-body mb-3" id="bookForm">
             <div class="mb-3">
                 <label for="title" class="form-label">Book Title</label>
-                <input type="text" class="form-control" id="title">
+                <input type="text" class="form-control" id="title" required>
             </div>
             <div class="mb-3">
                 <label for="author" class="form-label">Author</label>
-                <input type="text" class="form-control" id="author">
+                <input type="text" class="form-control" id="author" required>
             </div>
             <div class="mb-3">
                 <label for="numPages" class="form-label">Number of Pages</label>
-                <input type="number" class="form-control" id="numPages" min="1">
+                <input type="number" class="form-control" id="numPages" min="1" max="9999" required>
             </div>
             <div class="mb-3">
                 <input type="checkbox" class="form-check-input" id="haveRead">
